@@ -5,8 +5,9 @@ import store from '@/vuex/store.js'
 import axios from '@/utils/axios/ajax.js'
 import '@/assets/reset.css'
 
-import { Button, Input } from 'element-ui'
-Vue.use(Button).use(Input)
+import { Button, Input, Upload, Message } from 'element-ui'
+Vue.use(Button).use(Input).use(Upload)
+Vue.prototype.$message = Message
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
