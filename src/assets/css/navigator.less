@@ -1,0 +1,94 @@
+.nav-wrap {
+  z-index: 999;
+  height: 100vh;
+  min-width: 200px;
+  min-height: 600px;
+  background: linear-gradient(#2c7dc7, #1d6abe);
+  .user-info {
+    padding: 10px 0 30px;
+    .username {
+      padding-left: 20px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+    }
+    .logout {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding-right: 20px;
+      margin-top: 2px;
+      color: #fff;
+      text-align: right;
+      cursor: pointer;
+      .logout-text {
+        padding-left: 4px;
+        font-size: 14px;
+      }
+    }
+    .logout-icon {
+      width: 16px;
+    }
+  }
+  .nav-icon {
+    width: 18px;
+  }
+  li img {
+    margin-right: 12px;
+  }
+  .logo {
+    width: 161px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+  .el-menu {
+    font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    .el-submenu__title,
+    .home-text {
+      font-size: 16px;
+    }
+    .el-submenu__icon-arrow {
+      margin-top: -4px;
+    }
+    .el-menu-item {
+      min-width: 180px;
+    }
+    .el-submenu__title:focus,
+    .el-menu-item:focus,
+    .el-menu-item.is-active {
+      background: #01457e;
+    }
+    .el-menu-item:hover,
+    .el-submenu__title:hover {
+      background: #0360af;
+    }
+  }
+  .item-list {
+    display: flex;
+    height: 56px;
+    padding-left: 23px;
+    line-height: 56px;
+    color: #fff;
+    align-items: center;
+    a {
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+    }
+    i {
+      margin-right: 14px;
+      font-size: 18px;
+      color: #909399;
+    }
+  }
+}
+// 当不选中概况时tab整体上推20px
+.nav-tab {
+  margin-top: -20px;
+  transition: all 0.5s;
+}

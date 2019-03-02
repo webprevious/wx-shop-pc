@@ -1,50 +1,44 @@
 <template>
-  <div class="home">
-    <div class="text">hello world</div>
-    <div class="input-wrap">
-      <el-input v-model="userName" placeholder="请输入用户名"></el-input>
-      <el-button @click="saveUserInfoToVuex" type="primary">保存用户名到vuex</el-button>
-    </div>
-    <div>
-      <el-button type="default" @click="goTo">去关于页面</el-button>
+  <div id="home">
+    <h3 class="head-title">首页</h3>
+    <div class="logo">
+      <img src="../../assets/img/nav/home-logo.png" class="home-img">
+      <div class="logo-text">欢迎进入二手平台管理系统</div>
     </div>
   </div>
 </template>
-
 <script>
-import { mapActions } from 'vuex'
 export default {
-  name: 'home',
-  data () {
-    return {
-      userName: ''
-    }
-  },
-  methods: {
-    saveUserInfoToVuex () {
-      let userInfo = {
-        userName: this.userName
-      }
-      this.saveUserInfo(userInfo)
-    },
-    goTo () {
-      this.$router.push('/about')
-    },
-    ...mapActions(['saveUserInfo'])
-  }
+  name: 'home'
 }
 </script>
-
 <style lang="less" scoped>
-.home {
-  text-align: center;
-  .text {
-    color: red;
+#home {
+  width: 100%;
+  height: 100%;
+  .head-title {
+    height: 82px;
+    padding-left: 20px;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 82px;
+    color: #333;
+    border-bottom: 1px solid #d8d8d8;
   }
-  .input-wrap {
-    display: flex;
-    padding: 100px;
-    text-align: center;
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 58%;
+    font-size: 37px;
+    transform: translate(-50%, -50%);
+    .logo-text {
+      padding-top: 30px;
+      font-weight: 600;
+      letter-spacing: 3.6px;
+    }
+    .home-img {
+      width: 669px;
+    }
   }
 }
 </style>

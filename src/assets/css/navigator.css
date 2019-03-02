@@ -1,0 +1,93 @@
+.nav-wrap {
+  z-index: 999;
+  height: 100vh;
+  min-width: 200px;
+  min-height: 600px;
+  background: linear-gradient(#2c7dc7, #1d6abe);
+}
+.nav-wrap .user-info {
+  padding: 10px 0 30px;
+}
+.nav-wrap .user-info .username {
+  padding-left: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+}
+.nav-wrap .user-info .logout {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+  margin-top: 2px;
+  color: #fff;
+  text-align: right;
+  cursor: pointer;
+}
+.nav-wrap .user-info .logout .logout-text {
+  padding-left: 4px;
+  font-size: 14px;
+}
+.nav-wrap .user-info .logout-icon {
+  width: 16px;
+}
+.nav-wrap .nav-icon {
+  width: 18px;
+}
+.nav-wrap li img {
+  margin-right: 12px;
+}
+.nav-wrap .logo {
+  width: 161px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.nav-wrap .el-menu {
+  font-family: "PingFang SC", "Microsoft YaHei", "微软雅黑", sans-serif;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+}
+.nav-wrap .el-menu .el-submenu__title,
+.nav-wrap .el-menu .home-text {
+  font-size: 16px;
+}
+.nav-wrap .el-menu .el-submenu__icon-arrow {
+  margin-top: -4px;
+}
+.nav-wrap .el-menu .el-menu-item {
+  min-width: 180px;
+}
+.nav-wrap .el-menu .el-submenu__title:focus,
+.nav-wrap .el-menu .el-menu-item:focus,
+.nav-wrap .el-menu .el-menu-item.is-active {
+  background: #01457e;
+}
+.nav-wrap .el-menu .el-menu-item:hover,
+.nav-wrap .el-menu .el-submenu__title:hover {
+  background: #0360af;
+}
+.nav-wrap .item-list {
+  display: flex;
+  height: 56px;
+  padding-left: 23px;
+  line-height: 56px;
+  color: #fff;
+  align-items: center;
+}
+.nav-wrap .item-list a {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+}
+.nav-wrap .item-list i {
+  margin-right: 14px;
+  font-size: 18px;
+  color: #909399;
+}
+.nav-tab {
+  margin-top: -20px;
+  transition: all 0.5s;
+}

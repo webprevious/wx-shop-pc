@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '@/views/home'
-import About from '@/views/about'
-import Ie from '@/views/test-ie'
-import Register from '@/views/register'
+import SystemManage from '@/views/system-manage'
+import GoodsVerify from '@/views/goods-verify'
+import UserManage from '@/views/user-manage'
 import Upload from '@/views/upload'
 
 Vue.use(VueRouter)
@@ -16,19 +16,19 @@ export default new VueRouter({
       component: Home
     },
     {
-      path: '/about',
-      name: 'About',
-      component: About
+      path: '/system',
+      name: 'SystemManage',
+      component: SystemManage
     },
     {
-      path: '/ie',
-      name: 'Ie',
-      component: Ie
+      path: '/goods',
+      name: 'GoodsVerify',
+      component: GoodsVerify
     },
     {
-      path: '/register',
-      name: 'Register',
-      component: Register
+      path: '/user',
+      name: 'UserManage',
+      component: UserManage
     },
     {
       path: '/upload',
