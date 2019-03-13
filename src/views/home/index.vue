@@ -2,7 +2,7 @@
   <div id="home">
     <h3 class="head-title">首页</h3>
     <div class="logo">
-      <img src="../../assets/img/nav/home-logo.png" class="home-img">
+      <img src="../../assets/img/nav/logo.png" class="home-img">
       <div class="logo-text">欢迎进入二手平台管理系统</div>
     </div>
   </div>
@@ -33,8 +33,9 @@ export default {
     transform: translate(-50%, -50%);
     .logo-text {
       padding-top: 30px;
+      padding-left: 60px;
       font-weight: 600;
-      letter-spacing: 3.6px;
+      letter-spacing: 8.6px;
     }
     .home-img {
       width: 669px;

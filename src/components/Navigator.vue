@@ -1,7 +1,8 @@
 <template>
   <el-row class="nav-wrap" v-if="isAccountEnable">
     <el-col :span="24">
-      <img src="../assets/img/nav/logo.png" @click="goToIndex" class="logo">
+      <!-- <img src="../assets/img/nav/logo.png" @click="goToIndex" class="logo"> -->
+      <div @click="goToIndex" class="logo">二手交易管理平台</div>
       <el-row class="user-info">
         <el-col :span="12" class="username">{{userName}}</el-col>
         <el-col :span="12" class="logout" @click.native="logout">
@@ -18,19 +19,19 @@
           active-text-color="#fff"
           :router="true">
           <el-menu-item index="/">
-            <img src="../assets/img/nav/basic-icon.png" class="nav-icon">
+            <img src="../assets/img/nav/home-icon.png" class="nav-icon">
             <span class="home-text">首页</span>
           </el-menu-item>
           <el-menu-item index="/system">
-            <img src="../assets/img/nav/invoice-icon.png" class="nav-icon">
+            <img src="../assets/img/nav/system-icon.png" class="nav-icon">
             <span class="home-text">系统管理</span>
           </el-menu-item>
           <el-menu-item index="/goods">
-            <img src="../assets/img/nav/originimg-icon.png" class="nav-icon">
+            <img src="../assets/img/nav/manage.png" class="nav-icon">
             <span class="home-text">物品管理</span>
           </el-menu-item>
           <el-menu-item index="/user">
-            <img src="../assets/img/nav/originimg-icon.png" class="nav-icon">
+            <img src="../assets/img/nav/user-manage-icon.png" class="nav-icon">
             <span class="home-text">用户管理</span>
           </el-menu-item>
         </el-menu>
