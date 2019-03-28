@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <h3 class="head-title">首页</h3>
+    <top-title :title="title"></top-title>
     <div class="logo">
       <img src="../../assets/img/nav/logo.png" class="home-img">
       <div class="logo-text">欢迎进入二手平台管理系统</div>
@@ -8,23 +8,23 @@
   </div>
 </template>
 <script>
+import TopTitle from '@/components/TopTitle.vue'
 export default {
-  name: 'home'
+  name: 'home',
+  data () {
+    return {
+      title: '首页'
+    }
+  },
+  components: {
+    TopTitle
+  }
 }
 </script>
 <style lang="less" scoped>
 #home {
   width: 100%;
   height: 100%;
-  .head-title {
-    height: 82px;
-    padding-left: 20px;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 82px;
-    color: #333;
-    border-bottom: 1px solid #d8d8d8;
-  }
   .logo {
     position: absolute;
     top: 50%;
