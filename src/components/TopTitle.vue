@@ -32,6 +32,6 @@ h1 {
   color: #333;
 }
 .border-bottom {
-  border-bottom: 1px solid #d8d8d8;
+  border-bottom: 1px solid #EBEEF5;
 }
 </style>
