@@ -98,6 +98,8 @@ export default {
         }).catch(err => {
           this.$message.error(err)
         })
+      }).catch(err => {
+        console.log(err)
       })
     },
     ...mapActions(['userLogout', 'saveLogoutRecord'])
