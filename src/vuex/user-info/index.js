@@ -16,7 +16,7 @@ export default {
       let source = Object.assign({}, USER_TEMPLATE, data || {})
       commit('SET_USERINFO', source.userInfo)
     },
-    // 测试
+    // 保存用户信息到vuex
     saveUserInfo ({ commit }, data) {
       commit('SET_USERINFO', data)
     }
