@@ -8,23 +8,29 @@ import 'element-ui/lib/theme-chalk/index.css'
 import '@/assets/reset.css'
 
 Vue.use(ElementUI)
-// import {
-//   Button,
-//   Input,
-//   Table,
-//   TableColumn,
-//   Pagination,
-//   Upload,
-//   Message,
-//   Row,
-//   Col,
-//   Menu,
-//   MenuItem,
-//   MessageBox
-// } from 'element-ui'
-// Vue.use(Button).use(Input).use(Upload).use(Row).use(Col).use(Menu).use(MenuItem).use(TableColumn).use(Table).use(Pagination)
-// Vue.prototype.$message = Message
-// Vue.prototype.$confirm = MessageBox.confirm
+
+// 全局导航守卫用于登录和权限验证
+router.beforeEach((to, from, next) => {
+  let userInfo = store.state.userInfo.userInfo
+  console.log(userInfo)
+  console.log(to.meta)
+  // 判断本地是否有用户信息
+  console.log(to)
+  // 如果是去登录页面不进行鉴权
+  if (to.path === '/login') {
+    return next()
+  }
+  if (userInfo) {
+    // 有用户信息就进行权限鉴定
+    if (to.meta.role.includes(userInfo.role)) {
+      next()
+    } else {
+      ElementUI.Message.warning('权限不足，请向超级管理员申请')
+    }
+  } else {
+    next('/login')
+  }
+})
 
 Vue.config.productionTip = false
 Vue.prototype.$axios = axios
