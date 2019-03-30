@@ -17,8 +17,9 @@
           text-color="#fff"
           ref="navigator"
           active-text-color="#fff"
-          :router="true">
-          <el-menu-item index="/">
+          :router="true"
+          @select="handleSelect">
+          <el-menu-item index="/home">
             <img src="../assets/img/nav/home-icon.png" class="nav-icon">
             <span class="home-text">首页</span>
           </el-menu-item>
@@ -41,18 +42,24 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState } from 'vuex'
 export default {
   name: 'navigator',
   data () {
     return {
-      activeIndex: '/'
+      activeIndex: '/home',
+      path: this.$route
+    }
+  },
+  watch: {
+    path (newValue) {
+      console.log(newValue, '0000000')
     }
   },
   computed: {
     // 根据用户是否登录得到用户名
     userName () {
-      return this.userInfo ? this.userInfo.name : '未登录'
+      return this.userInfo ? this.userInfo.userName : '未登录'
     },
     // 处理tab打开时element-ui样式不一问题
     isOrderTab () {
@@ -60,7 +67,7 @@ export default {
     },
     // 判断是否选中了概况，选中了样式不变，没有选中就整体上推
     isSelectHome () {
-      return this.$route.path !== '/'
+      return this.$route.path !== '/home'
     },
     // 判断是否有访问此系统的权限
     isAccountEnable () {
@@ -77,7 +84,7 @@ export default {
   methods: {
     // [goToIndex 点击logo回到首页]
     goToIndex () {
-      this.$router.push('/')
+      this.$router.push('/home')
       location.reload()
     },
     // [logout 退出]
@@ -85,24 +92,19 @@ export default {
       this.$confirm('此操作将退出本系统, 是否继续?', '提示', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
-        type: 'warning',
-        customClass: 'logout-alert',
-        cancelButtonClass: 'cancel-btn',
-        confirmButtonClass: 'confirm-btn'
+        type: 'warning'
       }).then(() => {
-        // 记录退出
-        this.saveLogoutRecord()
-        this.userLogout().then(res => {
-          sessionStorage.clear()
-          window.location.href = process.env.VUE_APP_LOGOUT_URL
-        }).catch(err => {
-          this.$message.error(err)
-        })
+        // 清理缓存
+        sessionStorage.clear()
+        this.$router.replace('/login')
       }).catch(err => {
         console.log(err)
       })
     },
-    ...mapActions(['userLogout', 'saveLogoutRecord'])
+    // 当前选中index
+    handleSelect (index) {
+      this.activeIndex = this.$route.path
+    }
   },
   created () {
     this.activeIndex = this.$route.path
