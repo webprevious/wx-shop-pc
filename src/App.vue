@@ -1,20 +1,15 @@
 <template>
   <el-row id="app">
-    <el-col class="view-nav" :span="4">
-      <navigator></navigator>
-    </el-col>
-    <el-col class="view-page" :span="20">
-      <router-view></router-view>
-    </el-col>
+    <router-view></router-view>
   </el-row>
 </template>
 
 <script>
-import Navigator from '@/components/Navigator.vue'
+// import Navigator from '@/components/Navigator.vue'
 export default {
   name: 'app',
   components: {
-    Navigator
+    // Navigator
   }
 }
 </script>
@@ -23,19 +18,12 @@ export default {
 #app {
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
   min-width: 1000px;
-  .view-nav {
-    min-width: 200px;
-  }
-  .view-page {
-    min-width: 800px;
-    height: 100vh;
-    overflow-x: auto;
-  }
 }
 // 全局样式，避免样式穿透
 .carousel,
 .category,
-.user-manage {
+.user-manage,
+.verify {
   // 表格表头
   .el-table th {
     background-color: #FAFAFA!important;
@@ -49,6 +37,9 @@ export default {
   .update {
     color: #1d6abe;
     cursor: pointer;
+    & + span {
+      padding-left: 10px;
+    }
   }
   // 删除字段样式
   .delete {
@@ -66,6 +57,10 @@ export default {
     margin-top: 30px;
     margin-bottom: 100px;
     margin-left: 0!important;
+  }
+  // 用户管理，新增用户弹框
+  .el-dialog {
+    width: 410px!important;
   }
 }
 </style>
