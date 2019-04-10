@@ -25,7 +25,7 @@
               align="center">
             </el-table-column>
             <el-table-column
-              label="分类名称"
+              label="激活状态"
               align="center">
               <span slot-scope="scope">{{scope.row.isActive ? '是' : '否'}}</span>
             </el-table-column>
